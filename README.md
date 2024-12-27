@@ -1,2 +1,2 @@
-# Soul-Slayer
+# Soul Slayer
 Our first game
