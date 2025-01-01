@@ -1,0 +1,82 @@
+[gd_scene load_steps=7 format=3 uid="uid://buc2j5jfp6rhc"]
+
+[ext_resource type="Texture2D" uid="uid://d1aqtb8fj8nnq" path="res://assets/sprite/Touro/areia/areiaEffect.png" id="1_628id"]
+[ext_resource type="Script" path="res://scripts/areia_2.gd" id="1_lv4dt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sj5iy"]
+
+[sub_resource type="Animation" id="Animation_ofy1t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AreiaEffect:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_ws3ht"]
+resource_name = "areia2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AreiaEffect:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AreiaEffect:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_628id")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AreiaEffect:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hm0ur"]
+_data = {
+"RESET": SubResource("Animation_ofy1t"),
+"areia2": SubResource("Animation_ws3ht")
+}
+
+[node name="areia2" type="AnimatableBody2D"]
+script = ExtResource("1_lv4dt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sj5iy")
+
+[node name="animareia2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hm0ur")
+}
+
+[node name="AreiaEffect" type="Sprite2D" parent="."]
+texture = ExtResource("1_628id")
+hframes = 10
+frame = 1

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://yags4s17q1bj"]
+
+[ext_resource type="FontFile" uid="uid://cwlli28ymxoi0" path="res://assets/Kurland_Font_0_34/Kurland.ttf" id="1_73obb"]
+
+[node name="BackButton" type="Button"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -62.0
+offset_bottom = 30.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_73obb")
+theme_override_font_sizes/font_size = 20
+text = "Voltar"

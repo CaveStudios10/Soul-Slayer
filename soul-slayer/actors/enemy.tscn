@@ -1,0 +1,165 @@
+[gd_scene load_steps=35 format=3 uid="uid://bejaynjs5pnn5"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_7e8n3"]
+[ext_resource type="Texture2D" uid="uid://377vns7t2ard" path="res://assets/sprite/Inimigo/walk/boared-walk-1.png" id="2_idcq7"]
+[ext_resource type="Texture2D" uid="uid://0om0m81smbhf" path="res://assets/sprite/Inimigo/walk/boared-walk-2.png" id="3_t24ah"]
+[ext_resource type="Texture2D" uid="uid://d2lh8wpswa3s4" path="res://assets/sprite/Inimigo/walk/boared-walk-3.png" id="4_wb0pb"]
+[ext_resource type="Texture2D" uid="uid://bwywcvab67jm0" path="res://assets/sprite/Inimigo/walk/boared-walk-4.png" id="5_ddhhw"]
+[ext_resource type="Texture2D" uid="uid://bfk2nhbdot0bt" path="res://assets/sprite/Inimigo/atack/boared-atack-1.png" id="6_4mt1c"]
+[ext_resource type="Texture2D" uid="uid://coc70vrj7b80x" path="res://assets/sprite/Inimigo/atack/boared-atack-5.png" id="7_6ns5o"]
+[ext_resource type="Texture2D" uid="uid://cr4galgpcr2rq" path="res://assets/sprite/Inimigo/atack/boared-atack-2.png" id="7_hq2b3"]
+[ext_resource type="Texture2D" uid="uid://bh643ofetlliu" path="res://assets/sprite/Inimigo/atack/boared-atack-6.png" id="8_s7hpq"]
+[ext_resource type="Texture2D" uid="uid://bgkyrshrm726s" path="res://assets/sprite/Inimigo/atack/boared-atack-3.png" id="8_wlm5q"]
+[ext_resource type="Texture2D" uid="uid://bnkwtbhgfl8t8" path="res://assets/sprite/Inimigo/atack/boared-atack-7.png" id="9_2etar"]
+[ext_resource type="Texture2D" uid="uid://n5vc8ah8w2ob" path="res://assets/sprite/Inimigo/atack/boared-atack-4.png" id="9_v7gkw"]
+[ext_resource type="Texture2D" uid="uid://3wsplc018xif" path="res://assets/sprite/Inimigo/hit/boared hit.png" id="13_i08rv"]
+[ext_resource type="Texture2D" uid="uid://b3oqstmb0iji4" path="res://assets/sprite/Inimigo/hit/boared hit (1).png" id="14_ix7gu"]
+[ext_resource type="Texture2D" uid="uid://di58r6nsjiutv" path="res://assets/sprite/Inimigo/hit/boared hit (2).png" id="15_hieaq"]
+[ext_resource type="Texture2D" uid="uid://dbjbel4ayef4m" path="res://assets/sprite/Inimigo/hit/boared hit (3).png" id="16_4taoy"]
+[ext_resource type="Texture2D" uid="uid://by22wyg04pt6p" path="res://assets/sprite/Inimigo/hit/boared hit (4).png" id="17_n1rnq"]
+[ext_resource type="Texture2D" uid="uid://cimtc81hk6ohn" path="res://assets/sprite/Inimigo/death/boared die.png" id="18_6c781"]
+[ext_resource type="Texture2D" uid="uid://bvypec8sp8tq5" path="res://assets/sprite/Inimigo/death/boared die2.png" id="19_1qfnd"]
+[ext_resource type="Texture2D" uid="uid://bfpte448c2jk4" path="res://assets/sprite/Inimigo/death/boared die (1).png" id="20_5bni5"]
+[ext_resource type="Texture2D" uid="uid://bs4kdtyy88ww1" path="res://assets/sprite/Inimigo/death/boared die (3).png" id="21_u3ylv"]
+[ext_resource type="Texture2D" uid="uid://bffolyf8qy3ik" path="res://assets/sprite/Inimigo/death/boared die (4).png" id="22_cprbs"]
+[ext_resource type="Texture2D" uid="uid://c04h2uulvyym4" path="res://assets/sprite/Inimigo/death/boared die (5).png" id="23_q3x4b"]
+[ext_resource type="Texture2D" uid="uid://ckxovgkgjmbwb" path="res://assets/sprite/Inimigo/death/boared die (6).png" id="24_fwel3"]
+[ext_resource type="Texture2D" uid="uid://by245dmic2f3w" path="res://assets/sprite/Inimigo/death/boared die (7).png" id="25_mywl6"]
+[ext_resource type="Texture2D" uid="uid://bambwkv0l5s47" path="res://assets/sprite/Inimigo/death/boared die (8).png" id="26_bau44"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8c6s"]
+size = Vector2(33, 22)
+
+[sub_resource type="Animation" id="Animation_sfgfg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_idcq7")]
+}
+
+[sub_resource type="Animation" id="Animation_rcc1d"]
+resource_name = "attack"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_4mt1c"), ExtResource("7_hq2b3"), ExtResource("8_wlm5q"), ExtResource("9_v7gkw"), ExtResource("7_6ns5o"), ExtResource("8_s7hpq"), ExtResource("9_2etar")]
+}
+
+[sub_resource type="Animation" id="Animation_fkmgf"]
+resource_name = "death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("18_6c781"), ExtResource("19_1qfnd"), ExtResource("20_5bni5"), ExtResource("21_u3ylv"), ExtResource("22_cprbs"), ExtResource("23_q3x4b"), ExtResource("24_fwel3"), ExtResource("25_mywl6"), ExtResource("26_bau44")]
+}
+
+[sub_resource type="Animation" id="Animation_fwfnr"]
+resource_name = "hit"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("13_i08rv"), ExtResource("14_ix7gu"), ExtResource("15_hieaq"), ExtResource("16_4taoy"), ExtResource("17_n1rnq"), ExtResource("16_4taoy"), ExtResource("13_i08rv")]
+}
+
+[sub_resource type="Animation" id="Animation_i46yv"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_idcq7"), ExtResource("3_t24ah"), ExtResource("4_wb0pb"), ExtResource("5_ddhhw")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lfr1h"]
+_data = {
+"RESET": SubResource("Animation_sfgfg"),
+"attack": SubResource("Animation_rcc1d"),
+"death": SubResource("Animation_fkmgf"),
+"hit": SubResource("Animation_fwfnr"),
+"walk": SubResource("Animation_i46yv")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e1w2l"]
+radius = 18.0278
+
+[node name="enemy" type="CharacterBody2D" groups=["inimigo"]]
+collision_layer = 4
+collision_mask = 23
+script = ExtResource("1_7e8n3")
+
+[node name="texture" type="Sprite2D" parent="."]
+position = Vector2(1, -17)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_idcq7")
+flip_h = true
+
+[node name="colision" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -5)
+shape = SubResource("RectangleShape2D_i8c6s")
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lfr1h")
+}
+autoplay = "attack"
+
+[node name="wall_detector" type="RayCast2D" parent="."]
+position = Vector2(-11, -8)
+target_position = Vector2(-10, 0)
+collision_mask = 6
+
+[node name="atkarea" type="Area2D" parent="."]
+
+[node name="atkcolision" type="CollisionShape2D" parent="atkarea"]
+visible = false
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_e1w2l")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
+[connection signal="body_entered" from="atkarea" to="." method="_on_atkarea_body_entered"]
+[connection signal="body_exited" from="atkarea" to="." method="_on_atkarea_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

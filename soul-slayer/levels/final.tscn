@@ -1,0 +1,108 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctu65w1a2hob"]
+
+[ext_resource type="Texture2D" uid="uid://26ocbn0xuxm6" path="res://assets/tiles/ww-background-pixilart.png" id="1_aavdv"]
+[ext_resource type="Script" path="res://scripts/final.gd" id="1_damyd"]
+[ext_resource type="FontFile" uid="uid://cwlli28ymxoi0" path="res://assets/Kurland_Font_0_34/Kurland.ttf" id="2_udrl8"]
+
+[node name="Final" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_damyd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_aavdv")
+
+[node name="MadeBy" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -139.0
+offset_top = -54.0
+offset_right = 138.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Placeholder" type="Label" parent="MadeBy"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Feito por"
+
+[node name="CaveStudio" type="Button" parent="MadeBy" groups=["button"]]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_udrl8")
+theme_override_font_sizes/font_size = 24
+text = "Cave Studios"
+flat = true
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.503
+offset_left = -260.0
+offset_top = -198.0
+offset_right = 282.0
+offset_bottom = 217.84
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameName" type="Label" parent="MainContainer"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_udrl8")
+theme_override_font_sizes/font_size = 50
+text = "Você Ganhou!!"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer"]
+custom_minimum_size = Vector2(1000, 400)
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Refazer" type="Button" parent="MainContainer/HBoxContainer/VBoxContainer" groups=["button"]]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_udrl8")
+theme_override_font_sizes/font_size = 42
+text = "Refazer"
+flat = true
+
+[node name="Menu" type="Button" parent="MainContainer/HBoxContainer/VBoxContainer" groups=["button"]]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_udrl8")
+theme_override_font_sizes/font_size = 42
+text = "Menu"
+flat = true
+
+[connection signal="pressed" from="MainContainer/HBoxContainer/VBoxContainer/Refazer" to="." method="_on_refazer_pressed"]
+[connection signal="pressed" from="MainContainer/HBoxContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]

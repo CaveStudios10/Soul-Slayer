@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b13varjstaal2"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_iyv3y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ox5t1"]
+size = Vector2(14, 27.3333)
+
+[node name="player" type="CharacterBody2D"]
+scale = Vector2(1.2, 1.2)
+collision_mask = 2
+script = ExtResource("1_iyv3y")
+
+[node name="colision" type="CollisionShape2D" parent="."]
+position = Vector2(-5.83333, 1.16667)
+shape = SubResource("RectangleShape2D_ox5t1")
+
+[node name="animation" type="AnimationPlayer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]

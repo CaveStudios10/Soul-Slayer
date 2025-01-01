@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://duvc365r033sr"]
+
+[ext_resource type="Script" path="res://scripts/moving_plataform.gd" id="1_872s0"]
+[ext_resource type="Texture2D" uid="uid://1iyys052nd21" path="res://assets/tiles/plataforma.png" id="1_kwcht"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5dcn"]
+size = Vector2(54, 19.5)
+
+[node name="moving_plataform" type="Node2D"]
+script = ExtResource("1_872s0")
+
+[node name="plataforma" type="AnimatableBody2D" parent="."]
+collision_layer = 2
+
+[node name="sprite-plataforma" type="Sprite2D" parent="plataforma"]
+position = Vector2(3.25, 2)
+scale = Vector2(1.35938, 0.875)
+texture = ExtResource("1_kwcht")
+
+[node name="colision" type="CollisionShape2D" parent="plataforma"]
+position = Vector2(3, -2)
+shape = SubResource("RectangleShape2D_w5dcn")
+one_way_collision = true
