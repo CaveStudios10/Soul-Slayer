@@ -29,12 +29,6 @@ func _physics_process(delta: float) -> void:
 		direction *= -1 
 		wall_detector.scale.x *= -1
 		flip()
-	
-	if controle == false:
-		print("as")
-		controle = true
-		atacando = true
-		timer.start()
 
 		
 	if direction and not atacando:
@@ -93,9 +87,3 @@ func die():
 	is_dead = true
 	animation.play("death")
 	velocity = Vector2.ZERO
-
-
-func _on_timer_timeout():
-	print("oas")
-	atacando = false
-	texture.flip_h = false

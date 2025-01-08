@@ -1,18 +1,19 @@
-[gd_scene load_steps=25 format=3 uid="uid://mk1jymx1q817"]
+[gd_scene load_steps=26 format=3 uid="uid://mk1jymx1q817"]
 
 [ext_resource type="Texture2D" uid="uid://cpk1n2bki4knh" path="res://assets/tiles/tijolo cinza.png" id="1_4ygs0"]
 [ext_resource type="Texture2D" uid="uid://dpis3r5h85sch" path="res://assets/tiles/Portal.png" id="2_1dld4"]
-[ext_resource type="Texture2D" uid="uid://duqnudowle3wc" path="res://assets/tiles/ww-corner-right-down-floor-tile-pixilart.png" id="3_ir45l"]
+[ext_resource type="Texture2D" uid="uid://duqnudowle3wc" path="res://assets/tiles/Velho oeste/ww-corner-right-down-floor-tile-pixilart.png" id="3_ir45l"]
 [ext_resource type="Texture2D" uid="uid://cfic187w4ojhg" path="res://assets/tiles/ww-rigth-floor-tile-pixilart.png" id="3_kgqdf"]
-[ext_resource type="Texture2D" uid="uid://qbg3nm5kng0s" path="res://assets/tiles/ww-floor-tile-pixilart.png" id="4_rebpn"]
+[ext_resource type="Texture2D" uid="uid://qbg3nm5kng0s" path="res://assets/tiles/Velho oeste/ww-floor-tile-pixilart.png" id="4_rebpn"]
 [ext_resource type="PackedScene" uid="uid://u3tdk2chm70n" path="res://actors/playerfases.tscn" id="4_x1ugt"]
-[ext_resource type="Texture2D" uid="uid://dq7w813o6ejls" path="res://assets/tiles/ww-full-tile-pixilart.png" id="5_12i61"]
-[ext_resource type="Texture2D" uid="uid://26ocbn0xuxm6" path="res://assets/tiles/ww-background-pixilart.png" id="6_iwb6h"]
+[ext_resource type="Texture2D" uid="uid://dq7w813o6ejls" path="res://assets/tiles/Velho oeste/ww-full-tile-pixilart.png" id="5_12i61"]
+[ext_resource type="Texture2D" uid="uid://26ocbn0xuxm6" path="res://assets/tiles/Velho oeste/ww-background-pixilart.png" id="6_iwb6h"]
 [ext_resource type="PackedScene" uid="uid://d2uul8b4b4fpy" path="res://actors/touro.tscn" id="7_gngjk"]
 [ext_resource type="Texture2D" uid="uid://0mg7n8yoak5w" path="res://assets/tiles/ww-left-wall-tile-pixilart.png" id="7_u5wxm"]
-[ext_resource type="Texture2D" uid="uid://cm3g56vyqst26" path="res://assets/tiles/ww-corner-left-down-floor-tile-pixilart.png" id="8_2l4lt"]
+[ext_resource type="Texture2D" uid="uid://cm3g56vyqst26" path="res://assets/tiles/Velho oeste/ww-corner-left-down-floor-tile-pixilart.png" id="8_2l4lt"]
 [ext_resource type="Texture2D" uid="uid://c84xx26qt03x7" path="res://assets/tiles/ww-right-wall-tile-pixilart.png" id="9_ta7x4"]
-[ext_resource type="Texture2D" uid="uid://cls5lcg34occ7" path="res://assets/tiles/ww-left-floor-tile-pixilart.png" id="10_xo6yh"]
+[ext_resource type="Texture2D" uid="uid://cls5lcg34occ7" path="res://assets/tiles/Velho oeste/ww-left-floor-tile-pixilart.png" id="10_xo6yh"]
+[ext_resource type="AudioStream" uid="uid://bfovaxu3f6ys8" path="res://Músicas/The dry desert.mp3" id="14_llkdd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xpjkf"]
 texture = ExtResource("1_4ygs0")
@@ -156,3 +157,7 @@ position = Vector2(83, 302)
 
 [node name="touro" parent="." instance=ExtResource("7_gngjk")]
 position = Vector2(733, 335)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_llkdd")
+autoplay = true

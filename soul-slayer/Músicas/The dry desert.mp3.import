@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bfovaxu3f6ys8"
+path="res://.godot/imported/The dry desert.mp3-c6277bafd2c607e31093155998f84aae.mp3str"
+
+[deps]
+
+source_file="res://Músicas/The dry desert.mp3"
+dest_files=["res://.godot/imported/The dry desert.mp3-c6277bafd2c607e31093155998f84aae.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

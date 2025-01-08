@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://cwlli28ymxoi0" path="res://assets/Kurland_Font_0_34/Kurland.ttf" id="1_shi6d"]
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_wdlja"]
-[ext_resource type="Texture2D" uid="uid://26ocbn0xuxm6" path="res://assets/tiles/ww-background-pixilart.png" id="2_8aiby"]
+[ext_resource type="Texture2D" uid="uid://26ocbn0xuxm6" path="res://assets/tiles/Velho oeste/ww-background-pixilart.png" id="2_8aiby"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3

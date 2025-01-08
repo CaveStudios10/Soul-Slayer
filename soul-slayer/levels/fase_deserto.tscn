@@ -1,18 +1,19 @@
-[gd_scene load_steps=25 format=3 uid="uid://ntovlq6fhsf3"]
+[gd_scene load_steps=26 format=3 uid="uid://ntovlq6fhsf3"]
 
 [ext_resource type="Texture2D" uid="uid://cpk1n2bki4knh" path="res://assets/tiles/tijolo cinza.png" id="1_mtwnx"]
 [ext_resource type="Texture2D" uid="uid://dpis3r5h85sch" path="res://assets/tiles/Portal.png" id="2_wc2hs"]
-[ext_resource type="Texture2D" uid="uid://duqnudowle3wc" path="res://assets/tiles/ww-corner-right-down-floor-tile-pixilart.png" id="3_y82ay"]
+[ext_resource type="Texture2D" uid="uid://duqnudowle3wc" path="res://assets/tiles/Velho oeste/ww-corner-right-down-floor-tile-pixilart.png" id="3_y82ay"]
 [ext_resource type="Texture2D" uid="uid://cfic187w4ojhg" path="res://assets/tiles/ww-rigth-floor-tile-pixilart.png" id="4_xuk13"]
-[ext_resource type="Texture2D" uid="uid://qbg3nm5kng0s" path="res://assets/tiles/ww-floor-tile-pixilart.png" id="5_l5yqv"]
-[ext_resource type="Texture2D" uid="uid://dq7w813o6ejls" path="res://assets/tiles/ww-full-tile-pixilart.png" id="6_yjhiq"]
+[ext_resource type="Texture2D" uid="uid://qbg3nm5kng0s" path="res://assets/tiles/Velho oeste/ww-floor-tile-pixilart.png" id="5_l5yqv"]
+[ext_resource type="Texture2D" uid="uid://dq7w813o6ejls" path="res://assets/tiles/Velho oeste/ww-full-tile-pixilart.png" id="6_yjhiq"]
 [ext_resource type="Texture2D" uid="uid://0mg7n8yoak5w" path="res://assets/tiles/ww-left-wall-tile-pixilart.png" id="7_d02ts"]
-[ext_resource type="Texture2D" uid="uid://cm3g56vyqst26" path="res://assets/tiles/ww-corner-left-down-floor-tile-pixilart.png" id="8_50u6t"]
+[ext_resource type="Texture2D" uid="uid://cm3g56vyqst26" path="res://assets/tiles/Velho oeste/ww-corner-left-down-floor-tile-pixilart.png" id="8_50u6t"]
 [ext_resource type="Texture2D" uid="uid://c84xx26qt03x7" path="res://assets/tiles/ww-right-wall-tile-pixilart.png" id="9_nxihe"]
-[ext_resource type="Texture2D" uid="uid://cls5lcg34occ7" path="res://assets/tiles/ww-left-floor-tile-pixilart.png" id="10_77xaw"]
+[ext_resource type="Texture2D" uid="uid://cls5lcg34occ7" path="res://assets/tiles/Velho oeste/ww-left-floor-tile-pixilart.png" id="10_77xaw"]
 [ext_resource type="Texture2D" uid="uid://b18fcvambmms2" path="res://assets/tiles/Velho oeste/ww-background-little-town-pixilart.png" id="11_daf5r"]
 [ext_resource type="PackedScene" uid="uid://u3tdk2chm70n" path="res://actors/playerfases.tscn" id="12_f5u2a"]
 [ext_resource type="PackedScene" uid="uid://b20mo3ovpxe85" path="res://actors/troca.tscn" id="13_b7c8e"]
+[ext_resource type="PackedScene" uid="uid://i876wiyytqpv" path="res://actors/paloma.tscn" id="14_kgwup"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2rxd2"]
 texture = ExtResource("1_mtwnx")
@@ -156,3 +157,6 @@ position = Vector2(23, 376)
 
 [node name="Troca" parent="." instance=ExtResource("13_b7c8e")]
 position = Vector2(866, 296)
+
+[node name="paloma" parent="." instance=ExtResource("14_kgwup")]
+position = Vector2(515, 353)
