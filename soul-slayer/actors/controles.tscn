@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://lg2iiabf065m"]
+
+[ext_resource type="PackedScene" uid="uid://yags4s17q1bj" path="res://actors/BackButton.tscn" id="1_pm7yc"]
+[ext_resource type="FontFile" uid="uid://cwlli28ymxoi0" path="res://assets/Kurland_Font_0_34/Kurland.ttf" id="2_gyhlb"]
+
+[node name="Controles" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BackButton" parent="." instance=ExtResource("1_pm7yc")]
+layout_mode = 1
+offset_left = -155.0
+offset_top = 15.0
+offset_right = -24.0
+offset_bottom = 72.0
+theme_override_font_sizes/font_size = 35
+flat = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -398.0
+offset_top = -144.0
+offset_right = 402.0
+offset_bottom = 356.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_fonts/font = ExtResource("2_gyhlb")
+theme_override_font_sizes/font_size = 30
+text = "CONTROLES
+"
+horizontal_alignment = 1

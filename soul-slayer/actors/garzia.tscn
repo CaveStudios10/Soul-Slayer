@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://c3fqgoxv3ushk"]
+
+[ext_resource type="Script" path="res://dialogos/garzia.gd" id="1_svcm4"]
+[ext_resource type="Texture2D" uid="uid://mnlm671v2wmt" path="res://assets/tiles/Velho oeste/garzia.png" id="1_v3428"]
+[ext_resource type="PackedScene" uid="uid://dhddsgt5ospuk" path="res://actors/exclamacion.tscn" id="2_m7xkl"]
+[ext_resource type="PackedScene" uid="uid://biajufsfiraqo" path="res://dialogos/dialogo_garzia.tscn" id="3_vsmlt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jum0"]
+atlas = ExtResource("1_v3428")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmlxy"]
+atlas = ExtResource("1_v3428")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1x7x"]
+atlas = ExtResource("1_v3428")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju87f"]
+atlas = ExtResource("1_v3428")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0w6c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jum0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmlxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1x7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ju87f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0jgkl"]
+radius = 31.0161
+
+[node name="garzia" type="Node2D"]
+script = ExtResource("1_svcm4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.3, 1.3)
+sprite_frames = SubResource("SpriteFrames_m0w6c")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_0jgkl")
+
+[node name="exclamacion" parent="." instance=ExtResource("2_m7xkl")]
+position = Vector2(0, -46)
+
+[node name="dialogoGarzia" parent="." instance=ExtResource("3_vsmlt")]
+visible = false
+offset_left = -232.0
+offset_top = -253.0
+offset_right = 248.0
+offset_bottom = -153.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

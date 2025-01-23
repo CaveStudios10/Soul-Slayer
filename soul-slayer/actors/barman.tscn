@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://0eeonsy2p1pd"]
+
+[ext_resource type="Texture2D" uid="uid://mnlm671v2wmt" path="res://assets/tiles/Velho oeste/garzia.png" id="1_82j20"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1lyw"]
+size = Vector2(65, 53.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejcay"]
+atlas = ExtResource("1_82j20")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdc4l"]
+atlas = ExtResource("1_82j20")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e778"]
+atlas = ExtResource("1_82j20")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbfqd"]
+atlas = ExtResource("1_82j20")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x5y17"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejcay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdc4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0e778")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbfqd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Barman" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.5, 7.25)
+shape = SubResource("RectangleShape2D_t1lyw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.4, 1.4)
+sprite_frames = SubResource("SpriteFrames_x5y17")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq7ycbcr5hmk1"]
+
+[ext_resource type="Script" path="res://trocas/troca_d_c.gd" id="1_bjd7o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0g6p1"]
+size = Vector2(11, 116)
+
+[node name="TrocaD-C" type="Area2D"]
+script = ExtResource("1_bjd7o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.5, 48)
+shape = SubResource("RectangleShape2D_0g6p1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

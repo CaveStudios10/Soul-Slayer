@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg4b26okh8w5"]
+
+[ext_resource type="Script" path="res://scripts/dano.gd" id="1_05bof"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82t33"]
+size = Vector2(311, 20)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_05bof")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(88.5, 1)
+shape = SubResource("RectangleShape2D_82t33")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

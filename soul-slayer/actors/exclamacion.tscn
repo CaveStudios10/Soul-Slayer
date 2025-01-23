@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhddsgt5ospuk"]
+
+[ext_resource type="Texture2D" uid="uid://i40hbkysnij2" path="res://assets/sprite/decoration/exclamacao.png" id="1_76xsr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcyd8"]
+atlas = ExtResource("1_76xsr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tflrs"]
+atlas = ExtResource("1_76xsr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wixuj"]
+atlas = ExtResource("1_76xsr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q64vx"]
+atlas = ExtResource("1_76xsr")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ejmat"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcyd8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tflrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wixuj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q64vx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="exclamacion" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ejmat")
+autoplay = "default"

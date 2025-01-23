@@ -1,0 +1,151 @@
+[gd_scene load_steps=22 format=3 uid="uid://bbevx05lnyrxx"]
+
+[ext_resource type="Script" path="res://scripts/chefe_2.gd" id="1_ktus0"]
+[ext_resource type="Texture2D" uid="uid://bj87vnwvxv1ct" path="res://assets/sprite/empresa/mrPillow.png" id="1_rs7ts"]
+[ext_resource type="Texture2D" uid="uid://b3ar2x1dxnlsp" path="res://assets/sprite/empresa/mrPWalk.png" id="2_t36yg"]
+[ext_resource type="PackedScene" uid="uid://dhddsgt5ospuk" path="res://actors/exclamacion.tscn" id="3_scn1k"]
+[ext_resource type="PackedScene" uid="uid://b45vwjnth5mwp" path="res://dialogos/dialogo_chefe_2.tscn" id="5_whwxo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n2153"]
+radius = 30.1496
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu1av"]
+atlas = ExtResource("1_rs7ts")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ritcb"]
+atlas = ExtResource("1_rs7ts")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3l0yt"]
+atlas = ExtResource("1_rs7ts")
+region = Rect2(80, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u64ww"]
+atlas = ExtResource("1_rs7ts")
+region = Rect2(120, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0yyx"]
+atlas = ExtResource("1_rs7ts")
+region = Rect2(160, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d67gs"]
+atlas = ExtResource("2_t36yg")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iika5"]
+atlas = ExtResource("2_t36yg")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7yn3"]
+atlas = ExtResource("2_t36yg")
+region = Rect2(80, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35rsx"]
+atlas = ExtResource("2_t36yg")
+region = Rect2(120, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_di4cn"]
+atlas = ExtResource("2_t36yg")
+region = Rect2(160, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kamcw"]
+atlas = ExtResource("2_t36yg")
+region = Rect2(200, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_suuvs"]
+atlas = ExtResource("2_t36yg")
+region = Rect2(240, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gg5xh"]
+atlas = ExtResource("2_t36yg")
+region = Rect2(280, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4o7nc"]
+atlas = ExtResource("2_t36yg")
+region = Rect2(320, 0, 40, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5up5o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wu1av")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ritcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3l0yt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u64ww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0yyx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d67gs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iika5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7yn3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35rsx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_di4cn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kamcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_suuvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gg5xh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4o7nc")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[node name="Chefe2" type="Node2D"]
+script = ExtResource("1_ktus0")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 8.25)
+shape = SubResource("CircleShape2D_n2153")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_5up5o")
+autoplay = "default"
+flip_h = true
+
+[node name="exclamacion" parent="." instance=ExtResource("3_scn1k")]
+position = Vector2(0, -37)
+
+[node name="DialogoChefe2" parent="." instance=ExtResource("5_whwxo")]
+visible = false
+offset_left = -266.0
+offset_top = -253.0
+offset_right = 214.0
+offset_bottom = -153.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
