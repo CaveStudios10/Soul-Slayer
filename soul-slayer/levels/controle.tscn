@@ -1,0 +1,134 @@
+[gd_scene load_steps=5 format=3 uid="uid://m1irc6w3gjta"]
+
+[ext_resource type="Script" path="res://scripts/controle.gd" id="1_2fnv6"]
+[ext_resource type="FontFile" uid="uid://cwlli28ymxoi0" path="res://assets/Kurland_Font_0_34/Kurland.ttf" id="2_4dbuc"]
+[ext_resource type="Texture2D" uid="uid://cr7baiepcnpiu" path="res://assets/menu/fundoOnly2.png" id="2_hkjv4"]
+[ext_resource type="AudioStream" uid="uid://bqus7tp6crto0" path="res://Músicas/Click.wav" id="4_726hq"]
+
+[node name="Controle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2fnv6")
+
+[node name="FundoOnly2" type="Sprite2D" parent="."]
+position = Vector2(1287, 731)
+scale = Vector2(3.57778, 4.06111)
+texture = ExtResource("2_hkjv4")
+hframes = 12
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -331.5
+offset_top = -228.5
+offset_right = 331.5
+offset_bottom = 228.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameName" type="Label" parent="MainContainer"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+theme_override_fonts/font = ExtResource("2_4dbuc")
+theme_override_font_sizes/font_size = 50
+text = "------------------Controles--------------------"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="WASD" type="Label" parent="MainContainer/HBoxContainer/VBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("2_4dbuc")
+theme_override_font_sizes/font_size = 42
+text = "WASD-Mover"
+horizontal_alignment = 1
+
+[node name="Ataque" type="Label" parent="MainContainer/HBoxContainer/VBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_4dbuc")
+theme_override_font_sizes/font_size = 42
+text = "J ou Z-Ataque"
+horizontal_alignment = 1
+
+[node name="Pular" type="Label" parent="MainContainer/HBoxContainer/VBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_fonts/font = ExtResource("2_4dbuc")
+theme_override_font_sizes/font_size = 42
+text = "Enter - Conversar"
+horizontal_alignment = 1
+
+[node name="MainContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -333.0
+offset_top = 181.0
+offset_right = 330.0
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameName" type="Label" parent="MainContainer2"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4dbuc")
+theme_override_font_sizes/font_size = 50
+text = "------------------Controles--------------------"
+horizontal_alignment = 1
+
+[node name="voltar" type="Button" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_4dbuc")
+theme_override_font_sizes/font_size = 42
+text = "Voltar"
+flat = true
+
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(213, 219)
+stream = ExtResource("4_726hq")
+volume_db = 5.0
+
+[connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]

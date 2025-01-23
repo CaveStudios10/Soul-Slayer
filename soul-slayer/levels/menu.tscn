@@ -1,0 +1,180 @@
+[gd_scene load_steps=22 format=3 uid="uid://cd00uwhsc80a6"]
+
+[ext_resource type="FontFile" uid="uid://cwlli28ymxoi0" path="res://assets/Kurland_Font_0_34/Kurland.ttf" id="1_shi6d"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_wdlja"]
+[ext_resource type="AudioStream" uid="uid://bqus7tp6crto0" path="res://Músicas/Click.wav" id="2_y0fho"]
+[ext_resource type="Texture2D" uid="uid://dnq8ngoiqqo1t" path="res://assets/menu/inicial.png" id="4_w3hl1"]
+[ext_resource type="Texture2D" uid="uid://e1y7ed3wkfl" path="res://assets/menu/jogar.png" id="5_7mnwd"]
+[ext_resource type="Texture2D" uid="uid://d3c4me406d006" path="res://assets/menu/control.png" id="6_v2qf3"]
+[ext_resource type="Texture2D" uid="uid://dn52iua8l7efn" path="res://assets/menu/saitr.png" id="7_36j7e"]
+[ext_resource type="AudioStream" uid="uid://0oxyasi11uon" path="res://Músicas/menu.mp3" id="7_vqbhg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tcs1"]
+atlas = ExtResource("4_w3hl1")
+region = Rect2(0, 0, 720, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4awo"]
+atlas = ExtResource("4_w3hl1")
+region = Rect2(720, 0, 720, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqf2q"]
+atlas = ExtResource("4_w3hl1")
+region = Rect2(1440, 0, 720, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52lgu"]
+atlas = ExtResource("4_w3hl1")
+region = Rect2(2160, 0, 720, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmkyn"]
+atlas = ExtResource("4_w3hl1")
+region = Rect2(2880, 0, 720, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0xdd"]
+atlas = ExtResource("4_w3hl1")
+region = Rect2(3600, 0, 720, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxxca"]
+atlas = ExtResource("4_w3hl1")
+region = Rect2(4320, 0, 720, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqgpx"]
+atlas = ExtResource("4_w3hl1")
+region = Rect2(5040, 0, 720, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_en2b4"]
+atlas = ExtResource("4_w3hl1")
+region = Rect2(5760, 0, 720, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvg8v"]
+atlas = ExtResource("4_w3hl1")
+region = Rect2(6480, 0, 720, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mm6ah"]
+atlas = ExtResource("4_w3hl1")
+region = Rect2(7200, 0, 720, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13diq"]
+atlas = ExtResource("4_w3hl1")
+region = Rect2(7920, 0, 720, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4fn7c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tcs1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4awo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqf2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52lgu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmkyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0xdd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxxca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqgpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_en2b4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvg8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mm6ah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13diq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wdlja")
+
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(213, 219)
+stream = ExtResource("2_y0fho")
+volume_db = 5.0
+
+[node name="Play" type="Button" parent="." groups=["button"]]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+offset_left = 213.0
+offset_top = 219.0
+offset_right = 613.0
+offset_bottom = 272.0
+theme_override_fonts/font = ExtResource("1_shi6d")
+theme_override_font_sizes/font_size = 42
+flat = true
+
+[node name="Control2" type="Button" parent="." groups=["button"]]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+offset_left = 230.0
+offset_top = 281.0
+offset_right = 630.0
+offset_bottom = 335.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_shi6d")
+theme_override_font_sizes/font_size = 43
+flat = true
+
+[node name="Quit" type="Button" parent="." groups=["button"]]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+offset_left = 230.0
+offset_top = 362.0
+offset_right = 630.0
+offset_bottom = 416.0
+theme_override_fonts/font = ExtResource("1_shi6d")
+theme_override_font_sizes/font_size = 43
+flat = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(425, 255)
+scale = Vector2(1.18889, 1.41944)
+sprite_frames = SubResource("SpriteFrames_4fn7c")
+
+[node name="Jogar" type="Sprite2D" parent="."]
+position = Vector2(420, 243)
+texture = ExtResource("5_7mnwd")
+
+[node name="Control" type="Sprite2D" parent="."]
+position = Vector2(424, 313)
+texture = ExtResource("6_v2qf3")
+
+[node name="Saitr" type="Sprite2D" parent="."]
+position = Vector2(416, 384)
+texture = ExtResource("7_36j7e")
+
+[node name="menuMusica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_vqbhg")
+volume_db = 10.0
+autoplay = true
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Control2" to="." method="_on_control_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
