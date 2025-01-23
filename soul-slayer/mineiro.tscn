@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://chqxhf6lnb2nj"]
+
+[ext_resource type="Script" path="res://dialogos/mineiro.gd" id="1_6kufy"]
+[ext_resource type="Texture2D" uid="uid://i3eyncjpucca" path="res://assets/tiles/Velho oeste/pep.png" id="1_mhx7j"]
+[ext_resource type="PackedScene" uid="uid://dhddsgt5ospuk" path="res://actors/exclamacion.tscn" id="2_8c22m"]
+[ext_resource type="PackedScene" uid="uid://dro13h6ulbl75" path="res://dialogos/dialogo_mineiro.tscn" id="4_cm8t4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_371xw"]
+atlas = ExtResource("1_mhx7j")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nf8b6"]
+atlas = ExtResource("1_mhx7j")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfof6"]
+atlas = ExtResource("1_mhx7j")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6d2xe"]
+atlas = ExtResource("1_mhx7j")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5vala"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_371xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nf8b6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfof6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6d2xe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cpho4"]
+radius = 28.0179
+
+[node name="Mineiro" type="Node2D"]
+script = ExtResource("1_6kufy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_5vala")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 6)
+shape = SubResource("CircleShape2D_cpho4")
+
+[node name="exclamacion" parent="." instance=ExtResource("2_8c22m")]
+position = Vector2(0, -37)
+
+[node name="dialogoMineiro" parent="." instance=ExtResource("4_cm8t4")]
+visible = false
+offset_left = -276.0
+offset_top = -253.0
+offset_right = 204.0
+offset_bottom = -153.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
